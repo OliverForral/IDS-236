@@ -8,11 +8,13 @@ const Option = Select.Option;
 
 const children = [];
 for (let i = 10; i < 36; i++) {
+  const id = i.toString(36) + i;
   const sqrt = Math.sqrt(i);
+
   if (Math.round(sqrt) === sqrt) {
-    children.push(<Option key={i.toString(36) + i} disabled={true}>{i.toString(36) + i}</Option>)
+    children.push(<Option key={id} disabled={true} title={`Language Culture ${id} may be in use.`}>{id}</Option>)
   } else {
-    children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
+    children.push(<Option key={id}>{id}</Option>);
   }
 }
 
